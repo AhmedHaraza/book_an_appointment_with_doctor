@@ -12,11 +12,11 @@ class DocApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: const Size(375, 812),
+        // ! Adapt to Text Size
         minTextAdapt: true,
         splitScreenMode: true,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             primaryColor: ColorsManger.primaryColor,
             scaffoldBackgroundColor: ColorsManger.white,
