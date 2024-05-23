@@ -1,7 +1,9 @@
+import 'package:book_an_appointment_with_doctor/Core/helpers/extension.dart';
+import 'package:book_an_appointment_with_doctor/Core/routing/routes.dart';
 import 'package:book_an_appointment_with_doctor/Core/theming/styles.dart';
+import 'package:book_an_appointment_with_doctor/Core/widgets/app_boutton.dart';
 import 'package:book_an_appointment_with_doctor/feature/onbording/widgets/docLogo_and_name.dart';
 import 'package:book_an_appointment_with_doctor/feature/onbording/widgets/doctor_text_and_image.dart';
-import 'package:book_an_appointment_with_doctor/feature/onbording/widgets/get_started_boutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +17,6 @@ class OnBordingScreen extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 30.h),
         child: Column(
-            
           children: [
             const DocLogoAndName(),
             SizedBox(height: 30.h),
@@ -31,7 +32,12 @@ class OnBordingScreen extends StatelessWidget {
                     style: TextStyles.font13grayRegular,
                   ),
                   SizedBox(height: 30.h),
-                  const GetStartedBoutton(),
+                  AppBoutton(
+                    text: "Get Started",
+                    onPressed: () {
+                      context.pushNamed(Routes.loginScreen);
+                    },
+                  ),
                 ],
               ),
             )
