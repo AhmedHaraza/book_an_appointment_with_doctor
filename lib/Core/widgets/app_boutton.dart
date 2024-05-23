@@ -1,11 +1,11 @@
-import 'package:book_an_appointment_with_doctor/Core/helpers/extension.dart';
-import 'package:book_an_appointment_with_doctor/Core/routing/routes.dart';
 import 'package:book_an_appointment_with_doctor/Core/theming/app_colors.dart';
 import 'package:book_an_appointment_with_doctor/Core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class GetStartedBoutton extends StatelessWidget {
-  const GetStartedBoutton({super.key});
+class AppBoutton extends StatelessWidget {
+  final String text;
+  final void Function()? onPressed;
+  const AppBoutton({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,9 @@ class GetStartedBoutton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      onPressed: () {
-        context.pushNamed(Routes.loginScreen);
-      },
+      onPressed: onPressed,
       child: Text(
-        "Get Started",
+        text,
         style: TextStyles.font16wihtSemyBold,
       ),
     );
